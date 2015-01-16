@@ -1,0 +1,8 @@
+{
+  "name": "starting-ionic-template",
+  "devDependencies": {
+    "ionic": "1.0.0-beta.13",
+    "angular-restmod": "1.1.3",
+    "angular-mocks": "~1.2.27"
+  }
+}
