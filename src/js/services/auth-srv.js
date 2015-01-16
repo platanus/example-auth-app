@@ -11,7 +11,8 @@
     var service = {
       store: store,
       isLogged: isLogged,
-      isRegistered: isRegistered
+      isRegistered: isRegistered,
+      getAuthorizationHeader: getAuthorizationHeader
     };
 
     return service;
@@ -24,6 +25,10 @@
 
     function isRegistered() {
       return !!LocalDataSrv.getKey('uid');
+    }
+
+    function getAuthorizationHeader() {
+      return "token=" + LocalDataSrv.getKey('token') + " uid=" + LocalDataSrv.getKey('uid');
     }
 
     function store(_auth_data) {

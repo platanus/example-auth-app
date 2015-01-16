@@ -40,6 +40,17 @@ describe('AuthSrv', function() {
 
   });
 
+  describe('#getAuthorizationHeader', function() {
+
+    it('returns valid header', function() {
+      var authData = {uid: "charles@manson.com", token: "XXX"};
+      AuthSrv.store(authData);
+      var expectedHeader = "token=XXX uid=charles@manson.com";
+      expect(AuthSrv.getAuthorizationHeader()).to.equal(expectedHeader);
+    });
+
+  });
+
   describe('#store', function () {
 
     it('stores the token', function() {
