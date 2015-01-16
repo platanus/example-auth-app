@@ -1,3 +1,4 @@
+angular.module('RestmodAuth', []);
 angular.module('starter', ['ionic', 'starter.controllers', 'RestmodAuth'])
 
 .run(function($ionicPlatform) {
