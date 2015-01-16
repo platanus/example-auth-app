@@ -10,7 +10,8 @@
   function AuthSrv(LocalDataSrv) {
     var service = {
       store: store,
-      isLogged: isLogged
+      isLogged: isLogged,
+      isRegistered: isRegistered
     };
 
     return service;
@@ -19,6 +20,10 @@
 
     function isLogged() {
       return (!!LocalDataSrv.getKey('uid') && !!LocalDataSrv.getKey('token'));
+    }
+
+    function isRegistered() {
+      return !!LocalDataSrv.getKey('uid');
     }
 
     function store(_auth_data) {

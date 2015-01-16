@@ -26,6 +26,20 @@ describe('AuthSrv', function() {
 
   });
 
+  describe('#isRegistered', function() {
+
+    it('returns true with uid set', function() {
+      var authData = {uid: "charles@manson.com"};
+      AuthSrv.store(authData);
+      expect(AuthSrv.isRegistered()).to.be.true;
+    });
+
+    it('returns false without uid set', function() {
+      expect(AuthSrv.isLogged()).to.be.false;
+    });
+
+  });
+
   describe('#store', function () {
 
     it('stores the token', function() {
